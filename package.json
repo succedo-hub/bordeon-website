@@ -1,0 +1,13 @@
+{
+  "name": "bordeon-prototype",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check dist/app.js && node --check server.mjs && node --check scripts/build.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "bootstrap": "5.3.8"
+  }
+}
