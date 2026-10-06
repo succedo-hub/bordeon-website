@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check dist/app.js && node --check server.mjs && node --check scripts/build.mjs",
+    "check": "node --check dist/app.js && node --check server.mjs && node --check scripts/build.mjs && node --check dist/dashboard/dashboard.js",
     "build": "node scripts/build.mjs"
   },
   "dependencies": {
