@@ -1,6 +1,6 @@
 # Bordeon website
 
-Responsive, static marketing prototype for Bordeon, an emerging specialty insurance transaction platform. Includes the supplied identity, blue/silver gradients, Bootstrap 5.3.8, transaction demos and the CRM–Bordeon–ERP responsibility matrix.
+Responsive, static marketing website for Bordeon, an emerging specialty insurance transaction platform. Includes the supplied identity, blue/silver gradients, Bootstrap 5.3.8, transaction demos and the CRM–Bordeon–ERP responsibility matrix.
 
 ## Local development
 
@@ -32,7 +32,7 @@ The build copies pinned Bootstrap CSS and its license into `dist/vendor`. All br
 
 - `dist/index.html`: all page content and semantic components
 - `dist/style.css`: Bordeon identity, gradient surfaces and responsive layouts
-- `dist/app.js`: mobile navigation, transaction stages, format previews, matching demo and dialogs
+- `dist/app.js`: mobile navigation, transaction stages, format previews, finance hand-off preview and dialogs
 - `dist/assets/`: supplied logo and favicon
 - `dist/vendor/`: Bootstrap CSS and MIT license
 - `scripts/build.mjs`: reproducible vendor asset build
@@ -47,8 +47,15 @@ npm run check
 npm run build
 ```
 
-## Prototype scope
+## V1 positioning and website scope
 
-All insurance data and APIs are illustrative. Premium examples are not calculated quotes. The design partner form downloads a local text file and does not send or store details on a server. Connect a real contact flow and provide a production privacy notice before accepting enquiries.
+Bordeon V1 is in development. All insurance examples and API previews on this website are illustrative. Premium examples are not calculated quotes. The design partner form downloads a local text file and does not send or store details on a server. Connect a real contact flow and provide a production privacy notice before accepting enquiries.
 
 Bootstrap is distributed under its MIT license in `dist/vendor/bootstrap-LICENSE.txt`. The logo is supplied by the project owner.
+
+
+## Hero image
+
+`dist/assets/hero-nordic-architecture.jpg` was generated with the built-in image generation tool and compressed to JPEG for the website. It is decorative architectural imagery, not a photograph of Bordeon premises. Navy gradient overlays are applied in CSS. The original generation remains available locally.
+
+Generation prompt: Create one professional website hero background image, wide landscape 1536x1024 or wider. Photorealistic editorial architectural photography of a sophisticated contemporary Nordic financial district, glass and pale stone office facades with precise repeating structural lines, seen from a low diagonal perspective in soft blue hour light. No recognizable named building or organization, no signage, no text, no people, no logos, no boats, no nautical imagery, no glowing tech graphics. Midnight navy, steel blue and restrained silver highlights; understated institutional credibility, not sci-fi. Left half darker and visually quiet to hold white headline text, architectural interest across upper right and edges. Image will sit behind a B2B specialty insurance infrastructure marketing hero with a navy CSS gradient overlay. Deliver just the image, no typography.
