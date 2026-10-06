@@ -1,6 +1,6 @@
 # Bordeon website
 
-Responsive, static marketing website for Bordeon, an emerging specialty insurance transaction platform. Includes the supplied identity, blue/silver gradients, Bootstrap 5.3.8, transaction demos and the CRM–Bordeon–ERP responsibility matrix.
+Responsive, static marketing website for Bordeon, a specialty insurance transaction platform. Includes the supplied identity, blue/silver gradients, Bootstrap 5.3.8, transaction demos and the CRM–Bordeon–ERP responsibility matrix.
 
 ## Local development
 
@@ -26,7 +26,7 @@ Connect this repository using **Workers & Pages → Create application → Pages
 | Build command | `npm run build` |
 | Build output directory | `dist` |
 
-The build copies pinned Bootstrap CSS and its license into `dist/vendor`. All browser assets are served locally, with no external CDN, analytics or fonts. Cloudflare hosts only `dist`; `server.mjs` is for local preview and is not deployed as a Worker. No secrets or environment variables are required. Connect the production domain in Cloudflare after checking the first deployment.
+The build copies pinned Bootstrap CSS, the Inter variable font and their licenses into `dist/vendor`. All browser assets are served locally, with no external CDN, analytics or font requests. Cloudflare hosts only `dist`; `server.mjs` is for local preview and is not deployed as a Worker. No secrets or environment variables are required. Connect the production domain in Cloudflare after checking the first deployment.
 
 ## Structure
 
@@ -34,7 +34,7 @@ The build copies pinned Bootstrap CSS and its license into `dist/vendor`. All br
 - `dist/style.css`: Bordeon identity, gradient surfaces and responsive layouts
 - `dist/app.js`: mobile navigation, transaction stages, format previews, finance hand-off preview and dialogs
 - `dist/assets/`: supplied logo and favicon
-- `dist/vendor/`: Bootstrap CSS and MIT license
+- `dist/vendor/`: Bootstrap CSS, Inter font and their licenses
 - `scripts/build.mjs`: reproducible vendor asset build
 - `server.mjs`: loopback-only local server
 
@@ -47,11 +47,11 @@ npm run check
 npm run build
 ```
 
-## V1 positioning and website scope
+## Website scope and demo requests
 
-Bordeon V1 is in development. All insurance examples and API previews on this website are illustrative. Premium examples are not calculated quotes. The design partner form downloads a local text file and does not send or store details on a server. Connect a real contact flow and provide a production privacy notice before accepting enquiries.
+All insurance examples and API previews on this website are illustrative. Premium examples are not calculated quotes. The Book a demo form supports customer and investor/partner enquiries. It prepares an email to anton@succedo.fi in the visitor’s email application. The visitor must send it to request a time; no calendar reservation is made and no form details are stored on this website.
 
-Bootstrap is distributed under its MIT license in `dist/vendor/bootstrap-LICENSE.txt`. The logo is supplied by the project owner.
+Bootstrap is distributed under its MIT license in `dist/vendor/bootstrap-LICENSE.txt`. Inter is distributed under the SIL Open Font License in `dist/vendor/inter-LICENSE.txt`. The brand identity is supplied by the project owner.
 
 
 ## Hero image
