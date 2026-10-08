@@ -63,3 +63,7 @@ Generation prompt: Create one professional website hero background image, wide l
 ## Workspace demo
 
 Open `/dashboard/` for the standalone browser-only prototype. Add accepted business, create a policy, record endorsements and premium adjustments, edit two-carrier participation, generate CSV bordereaux and mark demo settlement obligations. Reports preserve their transaction and allocation snapshots. All amounts use EUR and premium adjustments are entered manually, not priced by an underwriting engine. Data stays in localStorage on that origin; use sample data only. There is no authentication, shared database, backend or payment execution. Reset demo replaces local records after confirmation.
+
+## Marketing design system
+
+Marketing pages are generated from reusable `marketing/` fragments by `scripts/render-marketing.mjs`, called by `npm run build`. Edit those fragments instead of generated HTML. Shared styles and interactions live in `dist/style.css` and `dist/app.js`. Detailed product interactions and the responsibility matrix live at `/architecture/`; investor content lives at `/company/`. Homepage import mapping is explicitly a design concept. Ledger and reporting previews use synthetic examples of the working dashboard flow. Decorative animation and third-party UI dependencies are not loaded by the marketing pages.
