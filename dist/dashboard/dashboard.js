@@ -3,8 +3,11 @@ const money=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR'}).
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
 const uid=prefix=>`${prefix}-${crypto.randomUUID().slice(0,8).toUpperCase()}`;
-const seed=()=>({records:[{id:'BRD-2026-0142',customer:'Nordic Marine Ltd',risk:'MV Example Vessel',date:'2026-10-01',value:2450000000,premium:12000000,commission:15,status:'Policy active',versions:[{number:1,date:'2026-10-01',value:2450000000,note:'Original policy bound'}],transactions:[{id:'TX-001',date:'2026-10-01',type:'Initial premium',gross:12000000,commission:15,version:1}],carriers:[{name:'Northstar Insurance (demo)',share:60},{name:'Baltic Specialty (demo)',share:40}],binder:'MARINE-2026',reports:[]}]});
+const seed=()=>({records:[{id:'BRD-2026-0142',customer:'Broker Ltd',risk:'MV Example Vessel',date:'2026-10-01',value:2450000000,premium:12000000,commission:15,status:'Policy active',versions:[{number:1,date:'2026-10-01',value:2450000000,note:'Original policy bound'}],transactions:[{id:'TX-001',date:'2026-10-01',type:'Initial premium',gross:12000000,commission:15,version:1}],carriers:[{name:'Northstar Insurance (demo)',share:60},{name:'Baltic Specialty (demo)',share:40}],binder:'MARINE-2026',reports:[]}]});
 let state,storageAvailable=true;try{state=JSON.parse(localStorage.getItem(key));if(!state||!Array.isArray(state.records)||!state.records.length)state=seed();}catch{state=seed();storageAvailable=false;}
+// Rename only the original sample record; preserve custom records and all history.
+const originalSample=state.records.find(r=>r.id==='BRD-2026-0142'&&r.customer==='Nordic Marine Ltd');
+if(originalSample){originalSample.customer='Broker Ltd';try{localStorage.setItem(key,JSON.stringify(state));}catch{storageAvailable=false;}}
 let active=state.records[0].id,view='bound',onSave;
 const titles={bound:'Bound Business',policy:'Policy',endorsement:'Endorsement',carrier:'Carrier / Binder',bordereaux:'Bordereaux',settlement:'Settlement'};
 const record=()=>state.records.find(r=>r.id===active);
