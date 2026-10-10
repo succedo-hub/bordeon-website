@@ -51,3 +51,22 @@ document.querySelectorAll('[data-transaction]').forEach(b=>b.addEventListener('c
 if(document.querySelector('#transaction-state'))showTransaction(2);
 const connectionCopy={intake:['MANUAL INTAKE · AVAILABLE IN DEMO','Start with accepted business.','Enter customer, risk, insured value and agreed premium. Create the first policy version from that record.'],record:['VERSIONED HISTORY · AVAILABLE IN DEMO','Keep the change and its context.','Link endorsements to the policy, preserve earlier versions and record additional or return premium as a separate transaction.'],output:['CSV REPORTING · AVAILABLE IN DEMO','Give every amount a destination.','Allocate net premium between carriers and create a bordereau snapshot with settlement obligations. Payment execution remains outside the demo.']};
 document.querySelectorAll('[data-connection]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-connection]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));const [label,title,copy]=connectionCopy[button.dataset.connection];document.querySelector('#connection-label').textContent=label;document.querySelector('#connection-title').textContent=title;document.querySelector('#connection-copy').textContent=copy;}));
+
+// Pause decorative motion on request and while the footer is off-screen.
+const footerPulse=document.querySelector('.footer-pulse');
+if(footerPulse){
+  const toggle=footerPulse.querySelector('.pulse-toggle');
+  let manuallyPaused=false;
+  let visible=false;
+  const updatePulse=()=>footerPulse.classList.toggle('is-paused',manuallyPaused||!visible||document.hidden);
+  toggle.addEventListener('click',()=>{
+    manuallyPaused=!manuallyPaused;
+    toggle.setAttribute('aria-pressed',String(manuallyPaused));
+    toggle.textContent=manuallyPaused?'Play animation':'Pause animation';
+    toggle.setAttribute('aria-label',manuallyPaused?'Play footer animation':'Pause footer animation');
+    updatePulse();
+  });
+  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;updatePulse();}).observe(footerPulse);
+  document.addEventListener('visibilitychange',updatePulse);
+  updatePulse();
+}
