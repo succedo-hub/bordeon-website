@@ -7,4 +7,6 @@ console.log('Static website ready in dist/ (Bootstrap 5.3.8).');
 
 await copyFile(new URL('node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2', root), new URL('dist/vendor/inter-latin-wght-normal.woff2', root));
 await copyFile(new URL('node_modules/@fontsource-variable/inter/LICENSE', root), new URL('dist/vendor/inter-LICENSE.txt', root));
+await copyFile(new URL('node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2', root), new URL('dist/vendor/manrope-latin-wght-normal.woff2', root));
+await copyFile(new URL('node_modules/@fontsource-variable/manrope/LICENSE', root), new URL('dist/vendor/manrope-LICENSE.txt', root));
 await import('./render-marketing.mjs');

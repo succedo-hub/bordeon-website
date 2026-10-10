@@ -67,3 +67,6 @@ Open `/dashboard/` for the standalone browser-only prototype. Add accepted busin
 ## Marketing design system
 
 Marketing pages are generated from reusable `marketing/` fragments by `scripts/render-marketing.mjs`, called by `npm run build`. Edit those fragments instead of generated HTML. Shared styles and interactions live in `dist/style.css` and `dist/app.js`. Detailed product interactions and the responsibility matrix live at `/architecture/`; investor content lives at `/company/`. Homepage import mapping is explicitly a design concept. Ledger and reporting previews use synthetic examples of the working dashboard flow. Decorative animation and third-party UI dependencies are not loaded by the marketing pages.
+
+## Product-focused visual update
+Marketing typography uses locally hosted Manrope (Google Fonts, SIL OFL). Dashboard retains Inter. Product screenshots are captured from the working demo with synthetic Broker Ltd data. The office image is an AI-assisted composite of the supplied office photograph and the actual policy screenshot, explicitly labelled illustrative on the site.
