@@ -9,15 +9,31 @@ document.querySelector('#format-content')?.setAttribute('aria-live','polite');
 document.querySelector('#match')?.addEventListener('click',()=>{document.querySelector('#match-status').textContent='Finance export: carrier reference, reporting period, expected amount and linked transaction IDs. The ERP manages invoice, payment and reconciliation workflows.'});
 document.querySelectorAll('[data-dialog]').forEach(button=>button.addEventListener('click',()=>{const dialog=document.getElementById(button.dataset.dialog);if(button.dataset.audience)dialog.querySelector('[name=audience]').value=button.dataset.audience;dialog.showModal()}));
 document.querySelectorAll('dialog').forEach(dialog=>{dialog.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()}})});
-document.querySelector('#partner-form').addEventListener('submit',event=>{
+document.querySelector('#partner-form').addEventListener('submit',async event=>{
   event.preventDefault();
-  const data=new FormData(event.currentTarget);
-  const subject=`Bordeon demo request — ${data.get('audience')}`;
-  const body=`Hello Anton,\n\nI would like to arrange a Bordeon demo.\n\nInterest: ${data.get('audience')}\nName: ${data.get('name')}\nCompany: ${data.get('company')}\n\n${data.get('workflow') || ''}\n\nPlease suggest a suitable time.`;
-  const link=document.createElement('a');
-  link.href=`mailto:anton@succedo.fi?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  link.click();
-  document.querySelector('.form-status').textContent='Your email app has been requested to open. Send the message there to request a time. If it does not open, email anton@succedo.fi directly.';
+  const form=event.currentTarget;
+  const button=form.querySelector('[type=submit]');
+  const status=form.querySelector('.form-status');
+  if(button.disabled) return;
+  button.disabled=true;
+  button.textContent='Sending…';
+  form.setAttribute('aria-busy','true');
+  status.textContent='Sending your request…';
+  status.dataset.state='pending';
+  try {
+    const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(!response.ok) throw new Error('Submission failed');
+    form.reset();
+    status.dataset.state='success';
+    status.textContent='Thank you — your demo request has been sent. We’ll get in touch by email to arrange a time.';
+  } catch(error) {
+    status.dataset.state='error';
+    status.textContent='We couldn’t confirm your request. Your details are still here. Please try again, or email anton@succedo.fi.';
+  } finally {
+    button.disabled=false;
+    button.textContent='Send demo request ↗';
+    form.removeAttribute('aria-busy');
+  }
 });
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){menu.setAttribute('aria-expanded','false');document.querySelector('nav').classList.remove('open')}});
 
