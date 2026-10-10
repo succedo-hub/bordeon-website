@@ -49,7 +49,7 @@ npm run build
 
 ## Website scope and demo requests
 
-All insurance examples and API previews on this website are illustrative. Premium examples are not calculated quotes. The Book a demo form supports customer and investor/partner enquiries. It prepares an email to anton@succedo.fi in the visitor’s email application. The visitor must send it to request a time; no calendar reservation is made and no form details are stored on this website.
+All insurance examples and API previews on this website are illustrative. Premium examples are not calculated quotes. Separate pilot and investor enquiry forms submit to the existing Formspree endpoint with distinct subjects and audience values. Both provide a direct email fallback to anton@succedo.fi, pending and confirmation messages, and recoverable error handling. No calendar reservation is made. Do not submit test enquiries to the live endpoint; use a mocked response when checking form behaviour.
 
 Bootstrap is distributed under its MIT license in `dist/vendor/bootstrap-LICENSE.txt`. Inter is distributed under the SIL Open Font License in `dist/vendor/inter-LICENSE.txt`. The brand identity is supplied by the project owner.
 
@@ -70,3 +70,9 @@ Marketing pages are generated from reusable `marketing/` fragments by `scripts/r
 
 ## Product-focused visual update
 Marketing typography uses locally hosted Manrope (Google Fonts, SIL OFL). Dashboard retains Inter. Product screenshots are captured from the working demo with synthetic Broker Ltd data. The office image is an AI-assisted composite of the supplied office photograph and the actual policy screenshot, explicitly labelled illustrative on the site.
+
+## MGA positioning and pilot scope
+
+The homepage leads with specialty MGA policy changes, premiums and carrier reporting through a shared transaction history. The change example appears immediately after the hero, followed by the five-step intended workflow and a scoped binder pilot. Available prototype behaviour is distinguished from planned Excel import, automated validation, carrier-specific templates and exception resolution.
+
+The company page carries the infrastructure vision, proof-of-concept status, EUR 1M funding objective, ten-customer objective, proposed recurring subscription model and capital priorities. Objectives are not presented as achieved traction. Investor calls to action open a dedicated enquiry form rather than the customer pilot form. The shared forms use the existing Formspree destination; the privacy notice describes both enquiry types.
