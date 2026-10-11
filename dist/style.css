@@ -103,3 +103,9 @@ html{scroll-padding-top:24px}
 .record-trace{display:flex;align-items:center;gap:8px;font-size:9px;color:#47628c;border-top:1px solid #e0e8f3;margin-top:20px;padding-top:16px}
 .record-trace .icon{width:16px;height:16px}
 @media(max-width:650px){.hero-record-preview{padding:18px 18px 36px}.record-preview-heading{font-size:8px}.record-change>div{font-size:22px}.record-amounts{gap:9px}.record-amounts b{font-size:16px}.record-amounts span{font-size:9px}}
+
+/* One canonical folded B is shared by the wordmark, footer, workspace and favicon. */
+.brand-lockup{display:inline-flex;align-items:center;gap:11px;line-height:1}
+.brand-lockup .brand-mark{display:block;width:36px;height:auto;flex:none}
+.brand-wordmark{font-family:'Manrope',sans-serif;font-size:28px;font-weight:800;letter-spacing:-.045em;color:#102749;line-height:1}
+@media(max-width:650px){.brand-lockup{gap:9px}.brand-lockup .brand-mark{width:31px}.brand-wordmark{font-size:25px}}

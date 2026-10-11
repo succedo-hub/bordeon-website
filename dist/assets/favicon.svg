@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 44"><path fill="#142c58" d="M4 2h17c19 0 23 19 7 23L10 20C4 18 4 13 4 2Z"/><path fill="#2365ec" d="m14 20 14 3c18 5 12 19-6 19H2v-9c0-5 5-8 12-13Z"/><path fill="#9db9f3" d="m8 18 20 5c7 2 10 7 8 11-2 4-7 2-11-2L8 18Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 44" fill="none">
+  <!-- Canonical Bordeon mark: two B bowls joined by a forward-folding ribbon. -->
+  <defs>
+    <linearGradient id="bordeon-upper" x1="4" y1="2" x2="37" y2="25" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#548BE8"/>
+      <stop offset="1" stop-color="#2454B3"/>
+    </linearGradient>
+    <linearGradient id="bordeon-lower" x1="3" y1="40" x2="36" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2463EB"/>
+      <stop offset="1" stop-color="#438FF5"/>
+    </linearGradient>
+    <linearGradient id="bordeon-fold" x1="9" y1="19" x2="37" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F7FF"/>
+      <stop offset="1" stop-color="#9DC8FF"/>
+    </linearGradient>
+  </defs>
+  <g id="bordeon-symbol">
+    <path data-part="upper" fill="url(#bordeon-upper)" d="M4 2H21C30.2 2 37.5 8.8 37.5 17.2C37.5 21.1 35.2 24.1 30.6 25.2L10.3 20.1C5.2 18.8 4 14.5 4 7.4V2Z"/>
+    <path data-part="lower" fill="url(#bordeon-lower)" d="M13.8 20.3L30.4 24.3C36.4 25.8 39 29.3 39 33.3C39 39 31.4 42 22.5 42H2V33.7C2 29.2 6.3 25.4 13.8 20.3Z"/>
+    <path data-part="fold" fill="url(#bordeon-fold)" d="M8.2 18.5L30.4 24.3C36.4 25.8 39 29.3 39 33.3C39 35.2 38.2 36.4 36.3 36.4C34.2 36.4 31.6 34.9 28.9 32.7L8.2 18.5Z"/>
+  </g>
+</svg>
