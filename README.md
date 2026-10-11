@@ -49,7 +49,7 @@ npm run build
 
 ## Website scope and demo requests
 
-All insurance examples and API previews on this website are illustrative. Premium examples are not calculated quotes. Separate pilot and investor enquiry forms submit to the existing Formspree endpoint with distinct subjects and audience values. Both provide a direct email fallback to anton@succedo.fi, pending and confirmation messages, and recoverable error handling. No calendar reservation is made. Do not submit test enquiries to the live endpoint; use a mocked response when checking form behaviour.
+All insurance examples and API previews on this website are illustrative. Premium examples are not calculated quotes. Separate customer demo and partnership enquiry forms submit to the existing Formspree endpoint with distinct subjects and audience values. Both provide a direct email fallback to anton@succedo.fi, pending and confirmation messages, and recoverable error handling. No calendar reservation is made. Do not submit test enquiries to the live endpoint; use a mocked response when checking form behaviour.
 
 Bootstrap is distributed under its MIT license in `dist/vendor/bootstrap-LICENSE.txt`. Inter is distributed under the SIL Open Font License in `dist/vendor/inter-LICENSE.txt`. The brand identity is supplied by the project owner.
 
@@ -66,13 +66,15 @@ Open `/dashboard/` for the standalone browser-only prototype. Add accepted busin
 
 ## Marketing design system
 
-Marketing pages are generated from reusable `marketing/` fragments by `scripts/render-marketing.mjs`, called by `npm run build`. Edit those fragments instead of generated HTML. Shared styles and interactions live in `dist/style.css` and `dist/app.js`. Detailed product interactions and the responsibility matrix live at `/architecture/`; investor content lives at `/company/`. Homepage import mapping is explicitly a design concept. Ledger and reporting previews use synthetic examples of the working dashboard flow. Decorative animation and third-party UI dependencies are not loaded by the marketing pages.
+Marketing pages are generated from reusable `marketing/` fragments by `scripts/render-marketing.mjs`, called by `npm run build`. Edit those fragments instead of generated HTML. Shared styles and interactions live in `dist/style.css` and `dist/app.js`. Detailed product interactions and the responsibility matrix live at `/architecture/`; company and partnership content lives at `/company/`. Homepage import mapping is explicitly a design concept. Ledger and reporting previews use synthetic examples of the working dashboard flow. Decorative animation and third-party UI dependencies are not loaded by the marketing pages.
 
 ## Product-focused visual update
 Marketing typography uses locally hosted Manrope (Google Fonts, SIL OFL). Dashboard retains Inter. Product screenshots are captured from the working demo with synthetic Broker Ltd data. The office image is an AI-assisted composite of the supplied office photograph and the actual policy screenshot, explicitly labelled illustrative on the site.
 
-## MGA positioning and pilot scope
+## Solution positioning and partnerships
 
-The homepage leads with specialty MGA policy changes, premiums and carrier reporting through a shared transaction history. The change example appears immediately after the hero, followed by the five-step intended workflow and a scoped binder pilot. Available prototype behaviour is distinguished from planned Excel import, automated validation, carrier-specific templates and exception resolution.
+The homepage presents Bordeon for specialty MGAs and brokers, connecting policy changes, premiums and carrier reporting through a shared transaction history. It leads with the solution and a worked endorsement example, followed by the demonstrated workflow, distinct MGA and broker use cases, and a clear route from demo to implementation planning.
 
-The company page carries the infrastructure vision, proof-of-concept status, EUR 1M funding objective, ten-customer objective, proposed recurring subscription model and capital priorities. Objectives are not presented as achieved traction. Investor calls to action open a dedicated enquiry form rather than the customer pilot form. The shared forms use the existing Formspree destination; the privacy notice describes both enquiry types.
+The customer call to action is to book a demo. Current demo capabilities are described separately from planned Excel import, automated validation, carrier-specific templates and exception resolution. The browser-only dashboard remains explicitly a demonstration using synthetic data.
+
+The company page carries the transaction infrastructure vision and invites industry, technology and strategic partners. Investment remains one possible partnership topic; there is no published fundraising amount or customer-count target. The dedicated partnership form and customer demo form use the existing Formspree destination with distinct subjects and audience values. The privacy notice covers both enquiry types.
