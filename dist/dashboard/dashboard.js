@@ -9,7 +9,9 @@ let state,storageAvailable=true;try{state=JSON.parse(localStorage.getItem(key));
 // Rename only the original sample record; preserve custom records and all history.
 const originalSample=state.records.find(r=>r.id==='BRD-2026-0142'&&r.customer==='Nordic Marine Ltd');
 if(originalSample){originalSample.customer='Broker Ltd';try{localStorage.setItem(key,JSON.stringify(state));}catch{storageAvailable=false;}}
-let active=state.records[0].id,view='bound',onSave;
+const lateChangeWalkthrough=new URLSearchParams(location.search).get('walkthrough')==='late-change';
+let active=state.records[0].id,view=lateChangeWalkthrough?'bordereaux':'bound',onSave;
+if(lateChangeWalkthrough)document.querySelector('#late-change-guide').open=true;
 const titles={bound:'Bound Business',policy:'Policy',endorsement:'Endorsement',carrier:'Carrier / Binder',bordereaux:'Bordereaux',settlement:'Settlement'};
 const record=()=>state.records.find(r=>r.id===active);
 const net=t=>t.gross-Math.round(t.gross*t.commission/100);

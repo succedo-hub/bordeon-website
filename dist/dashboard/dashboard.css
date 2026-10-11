@@ -8,3 +8,5 @@ nav button{align-items:center}
 nav button>.icon{width:18px;height:18px}
 .primary,.secondary,.quiet{display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .modal-heading button{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px}
+
+.workflow-guide{padding:18px 20px;border:1px solid #cbd9e7;border-radius:8px;background:#fff;margin-bottom:24px;color:#29455f}.workflow-guide summary{cursor:pointer;font-weight:650}.workflow-guide ol{padding-left:20px;display:grid;gap:12px;font-size:13px;line-height:1.7}.workflow-guide p{font-size:11px;line-height:1.7;color:#72879a}

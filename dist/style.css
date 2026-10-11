@@ -109,3 +109,17 @@ html{scroll-padding-top:24px}
 .brand-lockup .brand-mark{display:block;width:36px;height:auto;flex:none}
 .brand-wordmark{font-family:'Manrope',sans-serif;font-size:28px;font-weight:800;letter-spacing:-.045em;color:#102749;line-height:1}
 @media(max-width:650px){.brand-lockup{gap:9px}.brand-lockup .brand-mark{width:31px}.brand-wordmark{font-size:25px}}
+
+/* Concrete buying questions, report history and office product imagery. */
+.fit-faq{margin-top:28px;border-top:1px solid var(--line)}
+.fit-faq details,.regulatory-context{padding:20px 0;border-bottom:1px solid var(--line)}
+.fit-faq summary,.regulatory-context summary{cursor:pointer;font-size:15px;font-weight:650;color:#173b60}
+.fit-faq p,.regulatory-context p{max-width:900px;font-size:14px;line-height:1.75;color:#526a84;margin:16px 0 0}
+.report-comparison{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.report-comparison article{padding:26px;border:1px solid #d2deed;border-radius:9px;background:#f4f8fd}
+.report-comparison h3{font-size:30px;color:#173b60;margin:16px 0 10px}.report-comparison h3 small{font-size:14px;font-weight:400}.report-comparison p{font-size:12px;color:#526a84;margin:0}
+.office-feature,.office-gallery figure{margin:0}.office-feature img,.office-gallery img{display:block;width:100%;height:auto;object-fit:cover;border-radius:10px;border:1px solid #d2deed}.office-feature img{aspect-ratio:16/9}.office-feature figcaption,.office-gallery figcaption{font-size:11px;line-height:1.6;color:#647e9e;padding:12px 0}
+.office-gallery{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;margin-top:24px}.office-gallery img{aspect-ratio:3/2}
+.assurance-section .info-grid{padding:26px;background:#f1f6fc;border:1px solid #d8e3f0;border-radius:10px}.regulatory-links{display:flex;flex-wrap:wrap;gap:12px 24px}.regulatory-links a{color:#245cd0;text-decoration:underline;text-underline-offset:3px}
+.demo-agenda{padding:0;list-style:none;display:grid;gap:12px;margin:26px 0}.demo-agenda li{font-size:13px;line-height:1.6}.demo-agenda b{display:inline-block;min-width:58px;color:#b8d4ff}.demo-cta .demo-details{font-size:12px;line-height:1.7;max-width:560px}.demo-dialog-agenda{font-size:13px;color:#526a84;line-height:1.75;padding:14px;background:#f1f6fc;border-radius:6px}
+@media(max-width:650px){.report-comparison,.office-gallery{grid-template-columns:1fr}.report-comparison article{padding:20px}.assurance-section .info-grid{padding:20px}.office-feature img{aspect-ratio:4/3}.office-feature figcaption,.office-gallery figcaption{font-size:10px}.demo-agenda li{font-size:12px}}
